@@ -401,15 +401,16 @@ def DCOPFP(hat_p1, hat_p2, hat_p3, d4=1):
 We consider a chain power system:  (G1,L1)-(G2,L2)-(G3,L3)-(G1,L4)
 
 We have:
-$$p_1-d_1=s_{12}/x_{12}$$
-$$p_2-d_2=-s_{12}/x_{12}+s_{23}/x_{23}$$
-$$p_3-d_3=-s_{23}/x_{23}+s_{34}/x_{34}$$
-$$-d_4=-s_{34}/x_{34}$$
-$$-1\leq s_{12}/x_{12} \leq 1$$
-$$-1\leq s_{23}/x_{23} \leq 1$$
-$$-1\leq s_{34}/x_{34} \leq 1$$
-$$0\leq p_1 \leq 1$$
-$$0\leq p_2 \leq 1$$
-$$0\leq p_3 \leq 1$$
+
+  $$p_1-d_1=s_{12}/x_{12}$$
+  $$p_2-d_2=-s_{12}/x_{12}+s_{23}/x_{23}$$
+  $$p_3-d_3=-s_{23}/x_{23}+s_{34}/x_{34}$$
+  $$-d_4=-s_{34}/x_{34}$$
+  $$-1\leq s_{12}/x_{12} \leq 1$$
+  $$-1\leq s_{23}/x_{23} \leq 1$$
+  $$-1\leq s_{34}/x_{34} \leq 1$$
+  $$0\leq p_1 \leq 1$$
+  $$0\leq p_2 \leq 1$$
+  $$0\leq p_3 \leq 1$$
 
 We apply power transfer distribution factor matrix and assume x is 1, d1~d3 is 0, we can reformulate these constraints.  Combined with cost function f, we will get the optimization problem (1).
