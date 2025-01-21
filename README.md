@@ -61,11 +61,8 @@ $$\text{minimize } f(p_1, p_2, d_4 - p_1 - p_2) \text{ (2a)}$$
 **Subject to:**
 
 $$0 \leq p_1 \leq 1 \text{ (2b)}$$
-
 $$0 \leq p_2 \leq 1 \text{ (2c)}$$
-
 $$0 \leq d_4 - p_1 - p_2 \leq 1 \text{ (2d)}$$
-
 $$-1 \leq p_1 + p_2 \leq 1 \text{ (2e)}$$
 
 This reformulation reveals that the problem involves a 2D feasible range within a 3D space.
@@ -149,14 +146,14 @@ def LOOP(hat_p1, hat_p2,hat_p3=0,d4=1):
   phy_b= np.maximum(np.abs(hat_p1),np.abs(hat_p2))
   # print("phy_b",phy_b)
   # print(phy_b.shape)
-  v1=hat_p1/(-interior_p1+1)
-  v2=-hat_p1/(interior_p1)
-  v3=hat_p2/(-interior_p2+1)
-  v4=-hat_p2/(interior_p2)
-  v5=(-hat_p1-hat_p2)/(-d4+interior_p1+interior_p2+1)
-  v6=(hat_p1+hat_p2)/(d4-interior_p1-interior_p2)
-  v7=(hat_p1+hat_p2)/(1-interior_p1-interior_p2)
-  v8=(-hat_p1-hat_p2)/(1+interior_p1+interior_p2)
+  v1=hat_p1/(-interior_p1+1) # for 2b
+  v2=-hat_p1/(interior_p1) # for 2b
+  v3=hat_p2/(-interior_p2+1) # for 2c
+  v4=-hat_p2/(interior_p2) # for 2c
+  v5=(-hat_p1-hat_p2)/(-d4+interior_p1+interior_p2+1) # for 2d
+  v6=(hat_p1+hat_p2)/(d4-interior_p1-interior_p2) # for 2d
+  v7=(hat_p1+hat_p2)/(1-interior_p1-interior_p2) # for 2e
+  v8=(-hat_p1-hat_p2)/(1+interior_p1+interior_p2) # for 2e
 
   # v1~v8 are with shape (n,), for each row index, find its maximun value among v1~v8 and form phy_s, phy_s is with shape (n,)
   # v1~v8 can be calculated through matrix operation to accerlerate computation
@@ -247,14 +244,14 @@ def LOOP2(hat_p1, hat_p2,hat_p3=0,d4=1):
   hat_p2=hat_p2-interior_p2
 
   # print(phy_b.shape)
-  v1=hat_p1/(-interior_p1+1)
-  v2=-hat_p1/(interior_p1)
-  v3=hat_p2/(-interior_p2+1)
-  v4=-hat_p2/(interior_p2)
-  v5=(-hat_p1-hat_p2)/(-d4+interior_p1+interior_p2+1)
-  v6=(hat_p1+hat_p2)/(d4-interior_p1-interior_p2)
-  v7=(hat_p1+hat_p2)/(1-interior_p1-interior_p2)
-  v8=(-hat_p1-hat_p2)/(1+interior_p1+interior_p2)
+  v1=hat_p1/(-interior_p1+1) # for 2b
+  v2=-hat_p1/(interior_p1) # for 2b
+  v3=hat_p2/(-interior_p2+1) # for 2c
+  v4=-hat_p2/(interior_p2) # for 2c
+  v5=(-hat_p1-hat_p2)/(-d4+interior_p1+interior_p2+1) # for 2d
+  v6=(hat_p1+hat_p2)/(d4-interior_p1-interior_p2) # for 2d
+  v7=(hat_p1+hat_p2)/(1-interior_p1-interior_p2) # for 2e
+  v8=(-hat_p1-hat_p2)/(1+interior_p1+interior_p2) # for 2e
 
   # v1~v8 are with shape (n,), for each row index, find its maximun value among v1~v8 and form phy_s, phy_s is with shape (n,)
   phy_s= np.maximum(np.maximum(np.maximum(np.maximum(np.maximum(np.maximum(v1,v2),v3),v4),v5),v6),np.maximum(v7,v8))
