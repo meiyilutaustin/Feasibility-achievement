@@ -6,7 +6,7 @@ The integration of machine learning (ML) into optimization aims to enhance the e
 
 Extensive research has been conducted on developing ML optimization proxies that ensure feasible decision-making. A commonly used approach is adding penalty terms to minimize constraint violations. While effective across various optimization problems, this approach does not eliminate violations entirely (soft feasibility). To achieve **hard feasibility**, some methods incorporate repair modules that adjust solutions using iterative algorithms or explicit mapping functions to enforce constraint satisfaction directly.
 
-This repository illustrates and compares different repair mechanisms, including **LOOP-LC** [1], **LOOP-LC 2.0**[2], and **DeepOPF+**[3], with a focus on their feasibility achievement methods. Instead of focusing on accuracy, we highlight the intuition and implementation of each approach to restore feasibility.
+This repository illustrates and compares different repair mechanisms for linear constraints, including **LOOP-LC** [1], **LOOP-LC 2.0**[2], and **DeepOPF+**[3], with a focus on their feasibility achievement methods. Instead of focusing on accuracy, we highlight the intuition and implementation of each approach to restore feasibility.
 
 [1] Li, Meiyi, Soheil Kolouri, and Javad Mohammadi. "Learning to solve optimization problems with hard linear constraints." IEEE Access 11 (2023): 59995-60004.
 
@@ -100,7 +100,7 @@ The figure below illustrates the feasible range of constraints (1b)-(1f), where:
 ### Visual Comparison
 
 The figure below compares predictions before and after repair for each method (\(d_4 = 1\)):
-- **Red points:** NN predictions before repair.
+- **Red points:** NN predictions before repair. (We use evenly distributed pints to represent any possible NN prediction)
 - **Green points:** Predictions after repair.
 - **Blue points:** Feasible solutions.
 
