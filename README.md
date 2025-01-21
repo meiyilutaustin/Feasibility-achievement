@@ -398,7 +398,7 @@ def DCOPFP(hat_p1, hat_p2, hat_p3, d4=1):
 ![Predictions before and after repairment](images/DCOPF+_elev_20_azim_10.png)
 
 ## DCOPF
-We consider a chain power system:  (G1,L1)-(G2,L2)-(G3,L3)-(G1,L4)
+We consider a chain power system:  (G1,L1)-(G2,L2)-(G3,L3)-(L4)
 
 We have:
 
